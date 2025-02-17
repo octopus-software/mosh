@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('flavours', function (Blueprint $table) {
             $table->id();
             $table->integer('is_fixed');
-            $table->foreignId('shop_id');
-            $table->foreignId('manufacturer_id');
+            $table->foreignId('shop_id')->constrained();
+            $table->foreignId('manufacturer_id')->constrained();
             $table->string('name');
-            $table->foreignId('category_id');
+            $table->foreignId('category_id')->constrained();
             $table->integer('minimum_quantity');
             $table->integer('is_active');
             $table->timestamps();

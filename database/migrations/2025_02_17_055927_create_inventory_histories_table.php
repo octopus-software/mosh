@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('inventory_histories', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('flavour_id');
+            $table->foreignId('flavour_id')->constrained();
             $table->integer('quantity');
             $table->integer('inventory_registration_type');
-            $table->foreignId('user_id');
+            $table->foreignId('user_id')->constrained();
             $table->timestamps();
         });
     }
