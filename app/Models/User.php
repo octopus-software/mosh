@@ -29,6 +29,7 @@ class User extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'position_id',
         'firstname',
         'lastname',
         'nickname',
