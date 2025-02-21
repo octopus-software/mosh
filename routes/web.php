@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\User\UserGetController;
 use App\Http\Controllers\User\UserStoreController;
 use App\Http\Controllers\User\UserUpdateController;
 use Illuminate\Foundation\Application;
@@ -27,5 +28,6 @@ Route::middleware('auth')->group(function () {
 
 Route::post('/user',UserStoreController::class)->name('user.store');
 Route::put('/user/{id}',UserUpdateController::class)->name('user.update');
+Route::get('/user/{id}',UserGetController::class)->name('user.get');
 
 require __DIR__ . '/auth.php';
