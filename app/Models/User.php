@@ -13,6 +13,16 @@ class User extends Model
 {
     use HasFactory, Notifiable;
 
+    const IS_ACTIVE = [
+        'inactive' => 0,
+        'active' => 1
+    ];
+
+    const GENDER = [
+        'male' => 0,
+        'female' => 1
+    ];
+
     /**
      * The attributes that are mass assignable.
      *
