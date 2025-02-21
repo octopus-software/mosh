@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Flavour\FlavourStoreController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Shop\ShopGetEditController;
 use App\Http\Controllers\Shop\ShopGetListController;
@@ -41,5 +42,8 @@ Route::post('shop',ShopStoreController::class)->name('shop.store');
 Route::get('shop/{id}/edit',ShopGetEditController::class)->name('shop.edit');
 Route::put('/shop/{id}',ShopUpdateController::class)->name('shop.update');
 Route::get('/shops',ShopGetListController::class)->name('shop.list');
+
+//FLAVOUR
+Route::post('flavour',FlavourStoreController::class)->name('flavour.store');
 
 require __DIR__ . '/auth.php';

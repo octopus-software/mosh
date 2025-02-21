@@ -15,7 +15,10 @@ class Flavour extends Model
      */
     protected $fillable = [
         'is_fixed',
+        'shop_id',
+        'manufacturer_id',
         'name',
+        'category_id',
         'minimum_quantity',
         'is_active'
     ];
