@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Shop extends Model
 {
@@ -24,8 +25,8 @@ class Shop extends Model
     }
 
     // リレーション設定
-    public function flavours(): BelongsTo
+    public function flavours(): HasMany
     {
-        return $this->belongsTo(Flavour::class);
+        return $this->hasMany(Flavour::class);
     }
 }
