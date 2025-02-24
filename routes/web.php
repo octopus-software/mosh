@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Shop\ShopStoreController;
 use App\Http\Controllers\User\UserGetController;
 use App\Http\Controllers\User\UserStoreController;
 use App\Http\Controllers\User\UserUpdateController;
@@ -26,9 +27,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+//USER
 Route::post('/user',UserStoreController::class)->name('user.store');
 Route::put('/user/{id}',UserUpdateController::class)->name('user.update');
 Route::get('/user/{id}',UserGetController::class)->name('user.get');
 Route::get('/user/{id}/edit',UserGetController::class)->name('user.edit');
+
+//SHOP
+Route::post('shop',ShopStoreController::class)->name('shop.store');
 
 require __DIR__ . '/auth.php';
