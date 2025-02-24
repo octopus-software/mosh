@@ -21,22 +21,22 @@ services:
             - mysql
             - mailpit
         networks:
-            - laravel
+            - mosh
 
     mysql:
-        image: 'mysql:8.0'
+        image: 'mysql/mysql-server:8.0'
         container_name: mosh-mysql
         ports:
             - '${FORWARD_DB_PORT:-3306}:3306'
         environment:
-            MYSQL_ROOT_PASSWORD: '${DB_PASSWORD:-secret}'
-            MYSQL_DATABASE: '${DB_DATABASE:-laravel}'
-            MYSQL_USER: '${DB_USERNAME:-sail}'
-            MYSQL_PASSWORD: '${DB_PASSWORD:-secret}'
+            MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+            MYSQL_DATABASE: '${DB_DATABASE}'
+            MYSQL_USER: '${DB_USERNAME}'
+            MYSQL_PASSWORD: '${DB_PASSWORD}'
         volumes:
             - mysql-data:/var/lib/mysql
         networks:
-            - laravel
+            - mosh
 
     mailpit:
         image: 'axllent/mailpit:latest'
@@ -45,10 +45,10 @@ services:
             - '${FORWARD_MAILPIT_PORT:-1025}:1025'
             - '${FORWARD_MAILPIT_DASHBOARD_PORT:-8025}:8025'
         networks:
-            - laravel
+            - mosh
 
 networks:
-    laravel:
+    mosh:
         driver: bridge
 
 volumes:
