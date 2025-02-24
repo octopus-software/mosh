@@ -14,6 +14,14 @@ RUN apt-get update && apt-get install -y \
 # Apache mod_rewrite を有効化
 RUN a2enmod rewrite
 
+# Node.js と npm のインストール (推奨: NodeSource)
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && npm install -g npm
+
+# バージョン確認 (オプション: ビルド時の確認用)
+RUN node -v && npm -v
+
 # Composer のインストール
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
