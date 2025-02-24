@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Category extends Model
 {
@@ -17,8 +18,8 @@ class Category extends Model
     ];
 
     // リレーション設定
-    public function flavours(): BelongsTo
+    public function flavours(): HasMany
     {
-        return $this->belongsTo(flavour::class);
+        return $this->hasMany(flavour::class);
     }
 }

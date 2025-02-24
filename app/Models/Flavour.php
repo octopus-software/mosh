@@ -24,21 +24,21 @@ class Flavour extends Model
     ];
 
     // リレーション設定
-    public function shops(): HasMany
+    public function shops(): BelongsTo
     {
-        return $this->hasMany(Shop::class);
+        return $this->belongsTo(Shop::class,'shop_id','id');
     }
 
     // リレーション設定
-    public function manufacturers(): HasMany
+    public function manufacturers(): BelongsTo
     {
-        return $this->hasMany(Manufacturer::class);
+        return $this->belongsTo(Manufacturer::class,'manufacturer_id','id');
     }
 
     // リレーション設定
-    public function categories(): HasMany
+    public function categories(): BelongsTo
     {
-        return $this->hasMany(Category::class);
+        return $this->belongsTo(Category::class,'category_id','id');
     }
 
     // リレーション設定
