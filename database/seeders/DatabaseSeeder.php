@@ -17,7 +17,9 @@ class DatabaseSeeder extends Seeder
             ManufacturerSeeder::class,
             CategorySeeder::class,
             PositionSeeder::class,
-            UserSeeder::class
+            SupplierSeeder::class,
+            UserSeeder::class,
+            FlavourSeeder::class
         ]);
     }
 }

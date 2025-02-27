@@ -35,4 +35,10 @@ class Shop extends Model
     {
         return $this->belongsTo(RefillHistory::class);
     }
+
+    // リレーション設定
+    public function stocking_histories(): BelongsTo
+    {
+        return $this->belongsTo(StockingHistory::class);
+    }
 }

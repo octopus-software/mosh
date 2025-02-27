@@ -4,7 +4,7 @@ namespace App\Http\Requests\Inventory;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RefillHistoryStoreRequest extends FormRequest
+class StockingHistoryStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,12 @@ class RefillHistoryStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            '*.flavour_id' => ['required','integer','exists:flavours,id'],
-            '*.quantity'   => ['required','integer','min:0'],
-            '*.user_id'    => ['required','integer','exists:users,id'],
-            '*.shop_id'    => ['required','integer','exists:shops,id'],
+            '*.flavour_id'    => ['required','integer','exists:flavours,id'],
+            '*.quantity'      => ['required','integer','min:0'],
+            '*.price'         => ['required','integer','min:0'],
+            '*.supplier_id'   => ['required','integer','exists:suppliers,id'],
+            '*.user_id'       => ['required','integer','exists:users,id'],
+            '*.shop_id'       => ['required','integer','exists:shops,id'],
         ];
     }
 }
