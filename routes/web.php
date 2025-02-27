@@ -4,6 +4,7 @@ use App\Http\Controllers\Flavour\FlavourGetEditController;
 use App\Http\Controllers\Flavour\FlavourGetListController;
 use App\Http\Controllers\Flavour\FlavourStoreController;
 use App\Http\Controllers\Flavour\FlavourUpdateController;
+use App\Http\Controllers\Inventory\RefillHistoryStoreController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Shop\ShopGetEditController;
 use App\Http\Controllers\Shop\ShopGetListController;
@@ -51,5 +52,8 @@ Route::post('flavour',FlavourStoreController::class)->name('flavour.store');
 Route::put('flavour/{id}',FlavourUpdateController::class)->name('flavour.update');
 Route::get('flavour/{id}/edit',FlavourGetEditController::class)->name('flavour.edit');
 Route::get('flavours',FlavourGetListController::class)->name('flavour.list');
+
+//INVENTORY
+Route::post('/inventory/refill',RefillHistoryStoreController::class)->name('inventory.refill.store');
 
 require __DIR__ . '/auth.php';
