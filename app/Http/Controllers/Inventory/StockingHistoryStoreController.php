@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Inventory\StockingHistoryStoreRequest;
 use App\Models\InventoryHistory;
 use App\Models\StockingHistory;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class StockingHistoryStoreController extends Controller
