@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Notifications\Notifiable;
 
 class User extends Model
@@ -66,32 +66,32 @@ class User extends Model
     }
 
     // リレーション設定
-    public function positions(): HasMany
+    public function position(): HasOne
     {
-        return $this->hasMany(Position::class);
+        return $this->hasOne(Position::class);
     }
 
     // リレーション設定
-    public function shops(): BelongsToMany 
+    public function shops(): BelongsToMany
     {
         return $this->belongsToMany(Shop::class, 'shop_user', 'user_id', 'shop_id');
     }
 
     // リレーション設定
-    public function abilities(): BelongsToMany 
+    public function abilities(): BelongsToMany
     {
         return $this->belongsToMany(Ability::class, 'ability_user', 'user_id', 'ability_id');
     }
 
     // リレーション設定
-    public function stocking_histories(): BelongsTo
+    public function stocking_histories(): HasMany
     {
-        return $this->belongsTo(StockingHistory::class);
+        return $this->hasMany(StockingHistory::class);
     }
 
     // リレーション設定
-    public function refill_histories(): BelongsTo
+    public function refill_histories(): HasMany
     {
-        return $this->belongsTo(RefillHistory::class);
+        return $this->hasMany(RefillHistory::class);
     }
 }

@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -24,21 +23,27 @@ class Shop extends Model
         return $this->belongsToMany(User::class, 'shop_user', 'shop_id', 'user_id');
     }
 
-    // リレーション設定
+    /**
+     * @return HasMany
+     */
     public function flavours(): HasMany
     {
         return $this->hasMany(Flavour::class);
     }
 
-    // リレーション設定
-    public function refill_histories(): BelongsTo
+    /**
+     * @return HasMany
+     */
+    public function refill_histories(): hasMany
     {
-        return $this->belongsTo(RefillHistory::class);
+        return $this->hasMany(RefillHistory::class);
     }
 
-    // リレーション設定
-    public function stocking_histories(): BelongsTo
+    /**
+     * @return HasMany
+     */
+    public function stocking_histories(): hasMany
     {
-        return $this->belongsTo(StockingHistory::class);
+        return $this->hasMany(StockingHistory::class);
     }
 }

@@ -17,8 +17,10 @@ class Ability extends Model
         'sort_number'
     ];
 
-    // リレーション設定
-    public function users(): BelongsToMany 
+    /**
+     * @return BelongsToMany
+     */
+    public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'ability_user', 'ability_id', 'user_id');
     }

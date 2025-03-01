@@ -17,7 +17,9 @@ class Category extends Model
         'name'
     ];
 
-    // リレーション設定
+    /**
+     * @return HasMany
+     */
     public function flavours(): HasMany
     {
         return $this->hasMany(flavour::class);

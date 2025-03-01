@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Flavour extends Model
 {
@@ -22,34 +23,44 @@ class Flavour extends Model
         'is_active'
     ];
 
-    // リレーション設定
-    public function shops(): BelongsTo
+    /**
+     * @return BelongsTo
+     */
+    public function shop(): BelongsTo
     {
-        return $this->belongsTo(Shop::class,'shop_id','id');
+        return $this->belongsTo(Shop::class);
     }
 
-    // リレーション設定
-    public function manufacturers(): BelongsTo
+    /**
+     * @return BelongsTo
+     */
+    public function manufacturer(): BelongsTo
     {
-        return $this->belongsTo(Manufacturer::class,'manufacturer_id','id');
+        return $this->belongsTo(Manufacturer::class);
     }
 
-    // リレーション設定
-    public function categories(): BelongsTo
+    /**
+     * @return BelongsTo
+     */
+    public function category(): BelongsTo
     {
-        return $this->belongsTo(Category::class,'category_id','id');
+        return $this->belongsTo(Category::class);
     }
 
-    // リレーション設定
-    public function stocking_histories(): BelongsTo
+    /**
+     * @return HasMany
+     */
+    public function stocking_histories(): HasMany
     {
-        return $this->belongsTo(StockingHistory::class);
+        return $this->hasMany(StockingHistory::class);
     }
 
-    // リレーション設定
-    public function refill_histories(): BelongsTo
+    /**
+     * @return HasMany
+     */
+    public function refill_histories(): HasMany
     {
-        return $this->belongsTo(RefillHistory::class);
+        return $this->hasMany(RefillHistory::class);
     }
 
 }

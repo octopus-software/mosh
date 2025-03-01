@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Supplier extends Model
@@ -18,8 +17,8 @@ class Supplier extends Model
     ];
 
     // リレーション設定
-    public function stocking_histories(): BelongsTo
+    public function stocking_histories(): hasMany
     {
-        return $this->belongsTo(StockingHistory::class);
+        return $this->hasMany(StockingHistory::class);
     }
 }

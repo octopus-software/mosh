@@ -3,8 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class StockingHistory extends Model
 {
@@ -23,33 +22,35 @@ class StockingHistory extends Model
         'supplier_id'
     ];
 
-    // リレーション設定
-    public function flavours(): HasMany
+    /**
+     * @return BelongsTo
+     */
+    public function flavour(): BelongsTo
     {
-        return $this->hasMany(Flavour::class);
+        return $this->belongsTo(Flavour::class);
     }
 
-    // リレーション設定
-    public function inventory_histories(): HasOne
+    /**
+     * @return BelongsTo
+     */
+    public function user(): BelongsTo
     {
-        return $this->hasOne(InventoryHistory::class);
+        return $this->belongsTo(User::class);
     }
 
-    // リレーション設定
-    public function users(): HasMany
+    /**
+     * @return BelongsTo
+     */
+    public function supplier(): BelongsTo
     {
-        return $this->hasMany(User::class);
+        return $this->belongsTo(Supplier::class);
     }
 
-    // リレーション設定
-    public function suppliers(): HasMany
+    /**
+     * @return BelongsTo
+     */
+    public function shop(): BelongsTo
     {
-        return $this->hasMany(Supplier::class);
-    }
-
-    // リレーション設定
-    public function shops(): HasMany
-    {
-        return $this->hasMany(Shop::class);
+        return $this->belongsTo(Shop::class);
     }
 }
