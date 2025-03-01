@@ -16,7 +16,9 @@ class Supplier extends Model
         'name'
     ];
 
-    // リレーション設定
+    /**
+     * @return HasMany
+     */
     public function stocking_histories(): hasMany
     {
         return $this->hasMany(StockingHistory::class);

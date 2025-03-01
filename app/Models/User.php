@@ -65,31 +65,41 @@ class User extends Model
         ];
     }
 
-    // リレーション設定
+    /**
+     * @return HasOne
+     */
     public function position(): HasOne
     {
         return $this->hasOne(Position::class);
     }
 
-    // リレーション設定
+    /**
+     * @return BelongsToMany
+     */
     public function shops(): BelongsToMany
     {
         return $this->belongsToMany(Shop::class, 'shop_user', 'user_id', 'shop_id');
     }
 
-    // リレーション設定
+    /**
+     * @return BelongsToMany
+     */
     public function abilities(): BelongsToMany
     {
         return $this->belongsToMany(Ability::class, 'ability_user', 'user_id', 'ability_id');
     }
 
-    // リレーション設定
+    /**
+     * @return HasMany
+     */
     public function stocking_histories(): HasMany
     {
         return $this->hasMany(StockingHistory::class);
     }
 
-    // リレーション設定
+    /**
+     * @return HasMany
+     */
     public function refill_histories(): HasMany
     {
         return $this->hasMany(RefillHistory::class);
