@@ -22,12 +22,12 @@ class FlavourStoreRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "is_fixed" => ['required','integer'],
-            "shop_id" => ['required','integer','exists:shops,id'],
-            "manufacturer_id" => ['required','integer','exists:manufacturers,id'],
-            "name" => ['required','string'],
-            "category_id" => ['required','integer','exists:categories,id'],
-            "minimum_quantity" => ['required','integer','min:0']
+            "is_fixed"            => ['required','integer'],
+            "shop_id"             => ['required','integer','exists:shops,id'],
+            "manufacturer_id"     => ['required','integer','exists:manufacturers,id'],
+            "name"                => ['required','string'],
+            "category_id"         => ['required','integer','exists:categories,id'],
+            "minimum_quantity"    => ['required','integer','min:0']
         ];
     }
 }

@@ -15,7 +15,11 @@ class RefillHistory extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'quantity'
+        'flavour_id',
+        'quantity',
+        'user_id',
+        'inventory_history_id',
+        'shop_id'
     ];
 
     // リレーション設定
@@ -28,6 +32,12 @@ class RefillHistory extends Model
     public function users(): HasMany
     {
         return $this->hasMany(User::class);
+    }
+
+    // リレーション設定
+    public function shops(): HasMany
+    {
+        return $this->hasMany(Shop::class);
     }
 
     // リレーション設定

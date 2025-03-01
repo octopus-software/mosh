@@ -14,8 +14,13 @@ class StockingHistory extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'flavour_id',
         'quantity',
-        'price'
+        'price',
+        'user_id',
+        'inventory_history_id',
+        'shop_id',
+        'supplier_id'
     ];
 
     // リレーション設定
@@ -40,5 +45,11 @@ class StockingHistory extends Model
     public function suppliers(): HasMany
     {
         return $this->hasMany(Supplier::class);
+    }
+
+    // リレーション設定
+    public function shops(): HasMany
+    {
+        return $this->hasMany(Shop::class);
     }
 }
