@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.gradient-bg {
+    align-content: center;
+    align-items: center;
+    background-color: #bbe8fe;
+    border-radius: 24px;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /*height: 100%;*/
+    justify-content: flex-start;
+    margin: 0 0;
+}
+
+.header-title {
+    @apply flex pl-10 mb-2 text-xl font-semibold tracking-tight text-gray-600 items-center;
+    position: relative;
+    display: inline-block;
+    padding-left: 40px; /* ドットと見出しの距離 */
+}
+
+.sidemenu-item {
+    @apply flex pl-10 mb-2 text-xl font-semibold tracking-tight text-[#575757] items-center
+}
+
+.header-title::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 1em;   /* ドットのサイズ */
+    height: 1em;
+    background-color: #bbe8fe; /* ドットの色 */
+    border-radius: 25%; /* ドットを円にする */
+}
+
+tr {
+    background: #156fb9;
+}
+
+thead tr {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: white;
+}

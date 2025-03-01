@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\Shop;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,9 +19,11 @@ class AuthenticatedSessionController extends Controller
      */
     public function create(): Response
     {
+        $shops = Shop::query()->get();
         return Inertia::render('Auth/Login', [
             'canResetPassword' => Route::has('password.request'),
             'status' => session('status'),
+            'shops' => $shops,
         ]);
     }
 
@@ -29,9 +32,16 @@ class AuthenticatedSessionController extends Controller
      */
     public function store(LoginRequest $request): RedirectResponse
     {
+        // TODO: ユーザーが対象店舗にログインできるか確認する処理が必要
+
         $request->authenticate();
 
         $request->session()->regenerate();
+
+        // ログイン店舗情報をセッションに含める
+        $shop = Shop::query()->find($request['shop_id']);
+
+        session()->put('shop', ['id' => $shop['id'], 'name' => $shop['name']]);
 
         return redirect()->intended(route('dashboard', absolute: false));
     }
@@ -46,6 +56,9 @@ class AuthenticatedSessionController extends Controller
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
+
+        // ログイン店舗のセッションから削除する
+        session()->forget('shop');
 
         return redirect('/');
     }

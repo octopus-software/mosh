@@ -11,6 +11,39 @@ import { Head } from '@inertiajs/vue3';
             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">Dashboard</h2>
         </template>
 
+        <div>
+<!--            <div class="relative overflow-x-auto">-->
+                <div class="p-6 bg-white rounded-3xl shadow dark:bg-gray-800 dark:border-gray-700">
+                    <h5 class="header-title">ダッシュボード</h5>
+                    <hr class="my-4" />
+<!--                    <table class="w-full text-sm text-left rtl:text-right text-gray-500">-->
+<!--                        <thead class="text-xs text-gray-700 uppercase bg-gray-50">-->
+<!--                        <tr>-->
+<!--                            <th scope="col" class="px-6 py-3">-->
+<!--                                企業名-->
+<!--                            </th>-->
+<!--                            <th scope="col" class="px-6 py-3">-->
+<!--                                企業コード-->
+<!--                            </th>-->
+<!--                        </tr>-->
+<!--                        </thead>-->
+<!--                        <tbody>-->
+                        <!--                    <tr v-for="company in companies" :key="company['id']" class="bg-white border-b">-->
+                        <!--                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">-->
+                        <!--                            <Link :href="route('company.edit', {id: company['id']})">{{ company['company_name'] }}</Link>-->
+                        <!--                        </th>-->
+                        <!--                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">-->
+                        <!--                            {{ company['company_code'] }}-->
+                        <!--                        </th>-->
+                        <!--                    </tr>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+                </div>
+<!--            </div>-->
+            <hr class="mt-4 mb-2" />
+<!--            <Link :href="route('company.create')"><BlueButton text="新規企業登録" /></Link>-->
+        </div>
+
 <!--        &lt;!&ndash; Modal toggle &ndash;&gt;-->
 <!--        <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">-->
 <!--            Toggle modal-->

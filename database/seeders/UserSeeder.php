@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UserSeeder extends Seeder
 {
@@ -57,9 +58,9 @@ class UserSeeder extends Seeder
                 "nickname"      => $user['nickname'],
                 "gender"        => $user['gender'],
                 "birthday"      => $user['birthday'],
-                "email"         => $i."_example.mosh.com",
+                "email"         => $i."@example.mosh.com",
                 "staff_code"    => "000".$i,
-                "password"      => "password",
+                "password"      => Hash::make("password"),
                 "profile_image_url" => null,
                 "is_active"     => 1
             ]);

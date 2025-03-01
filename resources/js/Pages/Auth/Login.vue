@@ -6,13 +6,16 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import {defineProps} from "vue";
 
 defineProps<{
     canResetPassword?: boolean;
     status?: string;
+    shops: any[];
 }>();
 
 const form = useForm({
+    shop_id: '',
     email: '',
     password: '',
     remember: false,
@@ -36,8 +39,26 @@ const submit = () => {
         </div>
 
         <form @submit.prevent="submit">
+
             <div>
-                <InputLabel for="email" value="Email" />
+                <InputLabel for="shop_id" value="ログイン店舗" />
+
+                <select
+                    id="shop_id"
+                    class="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    v-model="form.shop_id"
+                    required
+                    autofocus
+                >
+                    <option value="">選択してください</option>
+                    <option v-for="shop in shops" :key="shop.id" :value="shop.id">{{ shop.name }}</option>
+                </select>
+
+                <InputError class="mt-2" :message="form.errors.shop" />
+            </div>
+
+            <div class="mt-4">
+                <InputLabel for="email" value="Eメール" />
 
                 <TextInput
                     id="email"
@@ -53,7 +74,7 @@ const submit = () => {
             </div>
 
             <div class="mt-4">
-                <InputLabel for="password" value="Password" />
+                <InputLabel for="password" value="パスワード" />
 
                 <TextInput
                     id="password"

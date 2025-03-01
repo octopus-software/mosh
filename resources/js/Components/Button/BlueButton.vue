@@ -1,8 +1,14 @@
 <template>
     <button
-            class=" m-2 text-white bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        class="flex items-center m-2 text-black bg-[#f4cc85] hover:bg-black hover:text-[#f4cc85]
+           focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium
+           rounded-lg text-sm w-full sm:w-auto px-7 py-3 text-center
+           transition-colors duration-300
+           shadow-lg shadow-gray-400/50">
+        <slot></slot>
         {{ text }}
     </button>
+
 </template>
 
 <script setup lang="ts">
