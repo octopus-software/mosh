@@ -9,7 +9,7 @@
             </div>
             <div class="flex justify-center">
                 <BlueButton v-if="canNext" @click="submit" text="次のテストへ進む"/>
-                <GrayButton v-if="!canNext" @click="" text="全ての質問に回答してください" disabled="true" />
+                <GrayButton v-if="!canNext" @click="" text="全ての質問に回答してください" disabled="true"/>
             </div>
         </div>
     </div>
@@ -36,12 +36,12 @@ const addFormData = inject<any>('addFormData');
 
 type Answer = {
     id: number;
-    value: string|number;
+    value: string | number;
 };
 
 type AnswerItem = {
     mbti_question_id: number;
-    value: string|number;
+    value: string | number;
 };
 
 const updateAnswer = ({id, value}: Answer) => {

@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { useSlots, defineProps } from "vue";
+import {useSlots, defineProps} from "vue";
+
 const slots = useSlots();
 
 const props = defineProps<{
@@ -15,9 +16,9 @@ const props = defineProps<{
            transition-colors duration-300
            shadow-md">
         <svg v-if="slots.default"
-            class="w-5 h-5 mr-1 text-white transition-colors duration-300 group-hover:text-main"
-            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-            fill="currentColor" viewBox="0 0 24 24">
+             class="w-5 h-5 mr-1 text-white transition-colors duration-300 group-hover:text-main"
+             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+             fill="currentColor" viewBox="0 0 24 24">
             <slot></slot>
         </svg>
         {{ text }}

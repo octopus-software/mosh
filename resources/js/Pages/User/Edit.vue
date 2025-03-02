@@ -24,8 +24,10 @@
                         </div>
                     </div>
 
-                    <BlueButton text="更新する" @click="submitUser" />
-                    <Link :href="route('company.edit', {id: user['company_id']})"><GrayButton text="利用企業詳細に戻る" /></Link>
+                    <BlueButton text="更新する" @click="submitUser"/>
+                    <Link :href="route('company.edit', {id: user['company_id']})">
+                        <GrayButton text="利用企業詳細に戻る"/>
+                    </Link>
                 </div>
             </div>
         </div>

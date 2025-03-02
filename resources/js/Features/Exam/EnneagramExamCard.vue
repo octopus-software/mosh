@@ -37,12 +37,12 @@ const addFormData = inject<any>('addFormData');
 
 type Answer = {
     id: number;
-    value: string|number;
+    value: string | number;
 };
 
 type AnswerItem = {
     enneagram_question_id: number;
-    value: string|number;
+    value: string | number;
 };
 
 const updateAnswer = ({id, value}: Answer) => {

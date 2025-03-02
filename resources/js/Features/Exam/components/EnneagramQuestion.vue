@@ -59,7 +59,7 @@ const emit = defineEmits(['update:modelValue']);
 const localValue = ref('');
 
 watch(localValue, (newValue) => {
-    emit('update:modelValue', { id: props.enneagram_question.id, value: newValue });
+    emit('update:modelValue', {id: props.enneagram_question.id, value: newValue});
 });
 
 </script>

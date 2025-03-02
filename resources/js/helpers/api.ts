@@ -13,12 +13,12 @@ export const apiGet = async (url: string, data: any = []) => axios.get(url, data
  * @param url
  * @param successMessage
  */
-export const apiDelete = async (url: string, successMessage:string) => {
+export const apiDelete = async (url: string, successMessage: string) => {
     const toaster = useToast()
     return await axios.delete(url).then(response => {
         response.status === 200 ? toaster.success(successMessage) : toaster.error(response.data.message);
         return true
-    }) .catch(error => {
+    }).catch(error => {
         toaster.error('予期せぬエラーが発生しました: ' + error.response.data.message);
         return false
     })
@@ -31,12 +31,12 @@ export const apiDelete = async (url: string, successMessage:string) => {
  * @param successMessage
  * @param data
  */
-export const apiPost = async (url: string, successMessage:string, data: any = []) => {
+export const apiPost = async (url: string, successMessage: string, data: any = []) => {
     const toaster = useToast()
     return await axios.post(url, data).then(response => {
         response.status === 200 ? toaster.success(successMessage) : toaster.error(response.data.message);
         return true
-    }) .catch(error => {
+    }).catch(error => {
         toaster.error('予期せぬエラーが発生しました: ' + error.response.data.message);
         return false
     })
@@ -48,11 +48,11 @@ export const apiPost = async (url: string, successMessage:string, data: any = []
  * @param successMessage
  * @param data
  */
-export const apiPut = async (url: string, successMessage:string, data: any = []) => {
+export const apiPut = async (url: string, successMessage: string, data: any = []) => {
     const toaster = useToast()
     await axios.put(url, data).then(response => {
         response.status === 200 ? toaster.success(successMessage) : toaster.error(response.data.message);
-    }) .catch(error => {
+    }).catch(error => {
         toaster.error('予期せぬエラーが発生しました: ' + error.response.data.message);
     })
 }

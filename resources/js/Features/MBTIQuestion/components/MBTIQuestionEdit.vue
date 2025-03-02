@@ -8,11 +8,12 @@
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             :class="{ 'bg-red-100': questionTextError, 'border-red-300': questionTextError }" placeholder=""
         />
-        <InputError v-if="questionTextError" :message="questionTextError" class="text-red-500" />
+        <InputError v-if="questionTextError" :message="questionTextError" class="text-red-500"/>
 
         <ul class="grid w-full gap-6 md:grid-cols-2 mt-4">
             <li>
-                <label for="answer_a" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">回答Aのテキスト[ {{ mbti_question.a_value }} ]</label>
+                <label for="answer_a" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">回答Aのテキスト[
+                    {{ mbti_question.a_value }} ]</label>
                 <input
                     type="text" v-model="answer_a"
                     id="answer_a"
@@ -20,10 +21,11 @@
                     :class="{ 'bg-red-100': answerAError, 'border-red-300': answerAError }" placeholder=""
                     required
                 />
-                <InputError v-if="answerAError" :message="answerAError" class="text-red-500" />
+                <InputError v-if="answerAError" :message="answerAError" class="text-red-500"/>
             </li>
             <li>
-                <label for="answer_b" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">回答Bのテキスト[ {{ mbti_question.b_value }} ]</label>
+                <label for="answer_b" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">回答Bのテキスト[
+                    {{ mbti_question.b_value }} ]</label>
                 <input
                     type="text" v-model="answer_b"
                     id="answer_b"
@@ -31,11 +33,11 @@
                     :class="{ 'bg-red-100': answerBError, 'border-red-300': answerBError }" placeholder=""
                     required
                 />
-                <InputError v-if="answerBError" :message="answerBError" class="text-red-500" />
+                <InputError v-if="answerBError" :message="answerBError" class="text-red-500"/>
             </li>
         </ul>
         <div class="flex justify-center">
-            <BlueButton @click="submit" class="mt-4 text-center" text="質問を更新する" />
+            <BlueButton @click="submit" class="mt-4 text-center" text="質問を更新する"/>
         </div>
     </div>
 </template>
@@ -73,7 +75,7 @@ const {value: answer_a, errorMessage: answerAError} = useField('answer_a');
 const {value: answer_b, errorMessage: answerBError} = useField('answer_b');
 
 const submit = handleSubmit(async (data) => {
-    await apiPut(route('sixteen_type_question.update', {id: props.mbti_question.id}), '更新に成功しました' , data)
+    await apiPut(route('sixteen_type_question.update', {id: props.mbti_question.id}), '更新に成功しました', data)
 });
 
 </script>

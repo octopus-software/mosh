@@ -3,7 +3,8 @@
         class="w-full mt-4 block p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
         <ul class="grid w-full gap-6 md:grid-cols-2 mt-4">
             <li>
-                <label for="answer_a" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">回答Aのテキスト[ {{ enneagram_question.a_value }} ]</label>
+                <label for="answer_a" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">回答Aのテキスト[
+                    {{ enneagram_question.a_value }} ]</label>
                 <input
                     type="text" v-model="answer_a"
                     id="answer_a"
@@ -11,10 +12,11 @@
                     :class="{ 'bg-red-100': answerAError, 'border-red-300': answerAError }" placeholder=""
                     required
                 />
-                <InputError v-if="answerAError" :message="answerAError" class="text-red-500" />
+                <InputError v-if="answerAError" :message="answerAError" class="text-red-500"/>
             </li>
             <li>
-                <label for="answer_b" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">回答Bのテキスト[ {{ enneagram_question.b_value }} ]</label>
+                <label for="answer_b" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">回答Bのテキスト[
+                    {{ enneagram_question.b_value }} ]</label>
                 <input
                     type="text" v-model="answer_b"
                     id="answer_b"
@@ -22,11 +24,11 @@
                     :class="{ 'bg-red-100': answerBError, 'border-red-300': answerBError }" placeholder=""
                     required
                 />
-                <InputError v-if="answerBError" :message="answerBError" class="text-red-500" />
+                <InputError v-if="answerBError" :message="answerBError" class="text-red-500"/>
             </li>
         </ul>
         <div class="flex justify-center">
-            <BlueButton @click="submit" class="mt-4 text-center" text="質問を更新する" />
+            <BlueButton @click="submit" class="mt-4 text-center" text="質問を更新する"/>
         </div>
     </div>
 </template>
@@ -61,7 +63,7 @@ const {handleSubmit, errors} = useForm({
 const {value: answer_a, errorMessage: answerAError} = useField('answer_a');
 const {value: answer_b, errorMessage: answerBError} = useField('answer_b');
 
-const submit = handleSubmit(async (data) => await apiPut(route('nine_type_question.update', {id: props.enneagram_question.id}), '更新に成功しました' , data));
+const submit = handleSubmit(async (data) => await apiPut(route('nine_type_question.update', {id: props.enneagram_question.id}), '更新に成功しました', data));
 
 </script>
 

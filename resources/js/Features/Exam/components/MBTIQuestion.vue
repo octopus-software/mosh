@@ -42,13 +42,13 @@
                 </label>
             </li>
         </ul>
-        <hr class="my-10 border-gray-900" />
+        <hr class="my-10 border-gray-900"/>
     </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, defineEmits, ref, watch } from 'vue';
-import { MBTIQuestionType } from '@/types/domain/MBTI';
+import {defineProps, defineEmits, ref, watch} from 'vue';
+import {MBTIQuestionType} from '@/types/domain/MBTI';
 
 const props = defineProps<{
     mbti_question: MBTIQuestionType;
@@ -60,7 +60,7 @@ const localValue = ref('');
 
 // Watch for changes in localValue and emit update
 watch(localValue, (newValue) => {
-    emit('update:modelValue', { id: props.mbti_question.id, value: newValue });
+    emit('update:modelValue', {id: props.mbti_question.id, value: newValue});
 });
 </script>
 
