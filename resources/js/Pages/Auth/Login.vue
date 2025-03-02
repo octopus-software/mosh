@@ -47,7 +47,7 @@ const submit = () => {
                     <option v-for="shop in shops" :key="shop.id" :value="Number(shop.id)">{{ shop.name }}</option>
                 </SelectInput>
 
-                <InputError class="mt-2" :message="form.errors.shop" />
+                <InputError class="mt-2" :message="form.errors.shop_id" />
             </div>
 
             <div class="mt-4">

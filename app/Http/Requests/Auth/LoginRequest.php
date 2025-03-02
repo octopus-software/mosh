@@ -83,4 +83,18 @@ class LoginRequest extends FormRequest
     {
         return Str::transliterate(Str::lower($this->string('email')).'|'.$this->ip());
     }
+
+    /**
+     * @return string[]
+     */
+    public function messages()
+    {
+        return [
+            'email.required' => 'メールアドレスは必須です。',
+            'email.email' => 'メールアドレスの形式が正しくありません。',
+            'password.required' => 'パスワードは必須です。',
+            'shop_id.required' => 'ログイン店舗は必須です。',
+            'shop_id.numeric' => 'ログイン店舗に不正な値です。',
+        ];
+    }
 }
