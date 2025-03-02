@@ -3,6 +3,7 @@ import flowbitePlugin from "flowbite/plugin";
 
 /** @type {import('tailwindcss').Config} */
 export default {
+    mode: 'jit',
     darkMode: 'class',
     plugin: [flowbitePlugin],
     content: [
