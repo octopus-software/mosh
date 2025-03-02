@@ -105,10 +105,9 @@
 <script setup>
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import {onMounted, ref} from "vue";
-import BlueButton from "../../Components/Button/BlueButton.vue";
+import BlueButton from "../../Components/Button/LogoutButton.vue";
 import OrangeButton from "../../Components/Button/OrangeButton.vue";
 import {useToast} from "vue-toast-notification";
-import {router} from "@inertiajs/vue3";
 
 const props = defineProps({
     users: {

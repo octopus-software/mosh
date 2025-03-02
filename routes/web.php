@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\_dev\ComponentGetListController;
 use App\Http\Controllers\DashboardGetController;
 use App\Http\Controllers\Flavour\FlavourGetEditController;
 use App\Http\Controllers\Flavour\FlavourGetListController;
@@ -60,5 +61,7 @@ Route::get('flavours',FlavourGetListController::class)->name('flavour.list');
 //INVENTORY
 Route::post('/inventory/refill',RefillHistoryStoreController::class)->name('inventory.refill.store');
 Route::post('/inventory/stocking',StockingHistoryStoreController::class)->name('inventory.stocking.store');
+
+Route::get('_dev/component_list', ComponentGetListController::class)->name('_dev.component_list');
 
 require __DIR__ . '/auth.php';

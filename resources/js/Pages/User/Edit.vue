@@ -36,7 +36,7 @@
 import {useToast} from 'vue-toast-notification';
 import 'vue-toast-notification/dist/theme-sugar.css';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
-import BlueButton from "../../Components/Button/BlueButton.vue";
+import BlueButton from "../../Components/Button/LogoutButton.vue";
 import GrayButton from "../../Components/Button/GrayButton.vue";
 import {defineProps} from 'vue';
 import {Link} from '@inertiajs/inertia-vue3';

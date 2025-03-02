@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import GuestLayout from '@/Layouts/GuestLayout.vue';
-import InputError from '@/Components/InputError.vue';
-import InputLabel from '@/Components/InputLabel.vue';
+import InputError from '@/Components/Input/InputError.vue';
+import InputLabel from '@/Components/Input/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
-import TextInput from '@/Components/TextInput.vue';
+import TextInput from '@/Components/Input/TextInput.vue';
 import { Head, Link, useForm } from '@inertiajs/vue3';
 
 const form = useForm({
@@ -24,7 +24,7 @@ const submit = () => {
 
 <template>
     <GuestLayout>
-        <Head title="Register" />
+        <Head title="Register" ><title>Register</title></Head>
 
         <form @submit.prevent="submit">
             <div>

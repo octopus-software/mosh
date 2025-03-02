@@ -3,7 +3,7 @@ import {usePage} from '@inertiajs/vue3';
 import {initFlowbite} from 'flowbite'
 import {onMounted} from "vue";
 import {apiPost} from "@/helpers/api";
-import BlueButton from "@/Components/Button/BlueButton.vue";
+import LogoutButton from "@/Components/Button/LogoutButton.vue";
 import SideBar from "@/Components/SideBar/SideBar.vue";
 
 onMounted(() => {
@@ -37,8 +37,11 @@ const shop: any = page.props.auth.shop
             <div class="w-[74%] mt-[2%] mx-[2%]">
                 <div class="flex justify-between my-6">
                     <div class="">
-                        <h2 class="px-2"><b class="text-main text-2xl">{{ user.nickname ?? '' }}</b><span class="text-sm"> さん</span></h2>
-                        <h2 class="px-2"><span class="text-sm">ようこそ </span><b class="text-main text-2xl">{{ shop.name }}</b><span class="text-sm"> 店へ</span></h2>
+                        <h2 class="px-2"><b class="text-main text-2xl">{{ user.nickname ?? '' }}</b><span
+                            class="text-sm"> さん</span></h2>
+                        <h2 class="px-2"><span class="text-sm">ようこそ </span><b class="text-main text-2xl">{{
+                                shop.name
+                            }}</b><span class="text-sm"> 店へ</span></h2>
                     </div>
 
                     <div class="flex">
@@ -61,12 +64,11 @@ const shop: any = page.props.auth.shop
                             <!--                                </button>-->
                             <!--                            </div>-->
                             <div class="ml-4">
-                                <BlueButton text="log out" @click="logout"/>
+                                <LogoutButton text="log out" @click="logout"/>
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <slot/>
             </div>
         </main>

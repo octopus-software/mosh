@@ -43,10 +43,10 @@
 <script setup lang="ts">
 import {defineProps} from 'vue';
 import {MBTIQuestionType} from "@/types/domain/MBTI";
-import InputError from "@/Components/InputError.vue";
+import InputError from "@/Components/Input/InputError.vue";
 import {object, string} from "yup";
 import {useField, useForm} from "vee-validate";
-import BlueButton from "@/Components/Button/BlueButton.vue";
+import BlueButton from "@/Components/Button/LogoutButton.vue";
 import {apiPut} from "@/helpers/api";
 
 const props = defineProps<{

@@ -90,8 +90,8 @@
 <script setup lang="ts">
 import 'vue-toast-notification/dist/theme-sugar.css';
 import {useField, useForm} from "vee-validate";
-import InputError from "@/Components/InputError.vue";
-import BlueButton from "@/Components/Button/BlueButton.vue";
+import InputError from "@/Components/Input/InputError.vue";
+import BlueButton from "@/Components/Button/LogoutButton.vue";
 import {inject} from "@vue/runtime-core";
 import {object, string} from "yup";
 

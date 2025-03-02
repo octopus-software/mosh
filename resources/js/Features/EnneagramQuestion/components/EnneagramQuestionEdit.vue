@@ -38,8 +38,8 @@ import {EnneagramQuestionType} from "@/types/domain/Enneagram";
 import {object, string} from "yup";
 import {useField, useForm} from "vee-validate";
 import {apiPut} from "@/helpers/api";
-import InputError from "@/Components/InputError.vue";
-import BlueButton from "@/Components/Button/BlueButton.vue";
+import InputError from "@/Components/Input/InputError.vue";
+import BlueButton from "@/Components/Button/LogoutButton.vue";
 
 const props = defineProps<{
     enneagram_question: EnneagramQuestionType,

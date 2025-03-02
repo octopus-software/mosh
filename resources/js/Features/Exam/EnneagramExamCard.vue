@@ -19,7 +19,7 @@
 import {defineProps, ref} from "vue";
 import {EnneagramQuestionType} from "@/types/domain/Enneagram";
 import EnneagramQuestion from "@/Features/Exam/components/EnneagramQuestion.vue";
-import BlueButton from "@/Components/Button/BlueButton.vue";
+import BlueButton from "@/Components/Button/LogoutButton.vue";
 import {inject} from "@vue/runtime-core";
 import GrayButton from "@/Components/Button/GrayButton.vue";
 

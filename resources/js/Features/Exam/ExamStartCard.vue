@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import BlueButton from "@/Components/Button/BlueButton.vue";
+import BlueButton from "@/Components/Button/LogoutButton.vue";
 import {inject} from "@vue/runtime-core";
 import GrayButton from "@/Components/Button/GrayButton.vue";
 import {ref} from "vue";
@@ -40,7 +40,7 @@ const checkCompanyCode = async () => {
         .then((response) => {
             canNext.value = response.data
         })
-        .catch((error) => {
+        .catch(() => {
             canNext.value = false
         })
 }

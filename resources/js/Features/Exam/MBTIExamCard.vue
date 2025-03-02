@@ -19,7 +19,7 @@
 import {defineProps, ref} from 'vue';
 import {MBTIQuestionType} from "@/types/domain/MBTI";
 import MBTIQuestion from "@/Features/Exam/components/MBTIQuestion.vue";
-import BlueButton from "@/Components/Button/BlueButton.vue";
+import BlueButton from "@/Components/Button/LogoutButton.vue";
 import GrayButton from "@/Components/Button/GrayButton.vue";
 import {inject} from "@vue/runtime-core";
 
