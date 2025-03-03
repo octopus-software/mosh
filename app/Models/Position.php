@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Position extends Model
 {
@@ -17,8 +18,8 @@ class Position extends Model
     ];
 
     // リレーション設定
-    public function users(): BelongsTo
+    public function users(): HasMany
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(User::class);
     }
 }

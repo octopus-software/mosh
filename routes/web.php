@@ -13,6 +13,7 @@ use App\Http\Controllers\Shop\ShopGetListController;
 use App\Http\Controllers\Shop\ShopStoreController;
 use App\Http\Controllers\Shop\ShopUpdateController;
 use App\Http\Controllers\User\UserGetController;
+use App\Http\Controllers\User\UserGetListController;
 use App\Http\Controllers\User\UserStoreController;
 use App\Http\Controllers\User\UserUpdateController;
 use Illuminate\Foundation\Application;
@@ -42,6 +43,7 @@ Route::post('/user',UserStoreController::class)->name('user.store');
 Route::put('/user/{id}',UserUpdateController::class)->name('user.update');
 Route::get('/user/{id}',UserGetController::class)->name('user.get');
 Route::get('/user/{id}/edit',UserGetController::class)->name('user.edit');
+Route::get('/users',UserGetListController::class)->name('user.list');
 
 //SHOP
 Route::post('shop',ShopStoreController::class)->name('shop.store');

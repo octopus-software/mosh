@@ -66,9 +66,9 @@ class User extends Model
     }
 
     // リレーション設定
-    public function positions(): HasMany
+    public function positions(): BelongsTo
     {
-        return $this->hasMany(Position::class);
+        return $this->belongsTo(Position::class);
     }
 
     // リレーション設定

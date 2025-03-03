@@ -21,7 +21,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             FlavourSeeder::class,
             ManualGroupSeeder::class,
-            ManualSeeder::class
+            ManualSeeder::class,
+            ShopUserSeeder::class
         ]);
     }
 }
