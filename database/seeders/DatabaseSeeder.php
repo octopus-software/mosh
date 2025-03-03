@@ -19,7 +19,9 @@ class DatabaseSeeder extends Seeder
             PositionSeeder::class,
             SupplierSeeder::class,
             UserSeeder::class,
-            FlavourSeeder::class
+            FlavourSeeder::class,
+            ManualGroupSeeder::class,
+            ManualSeeder::class
         ]);
     }
 }

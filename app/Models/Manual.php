@@ -4,9 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Category extends Model
+class Manual extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -14,12 +13,15 @@ class Category extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'name'
+        'manual_group_id',
+        'name',
+        'manual_file_url',
+        'sort_number'
     ];
 
     // リレーション設定
-    public function flavours(): HasMany
+    public function manuals(): BelongsTo
     {
-        return $this->hasMany(Flavour::class);
+        return $this->belongsTo(ManualGroup::class);
     }
 }

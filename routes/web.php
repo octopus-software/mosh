@@ -6,6 +6,7 @@ use App\Http\Controllers\Flavour\FlavourStoreController;
 use App\Http\Controllers\Flavour\FlavourUpdateController;
 use App\Http\Controllers\Inventory\RefillHistoryStoreController;
 use App\Http\Controllers\Inventory\StockingHistoryStoreController;
+use App\Http\Controllers\Manual\ManualGetListController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Shop\ShopGetEditController;
 use App\Http\Controllers\Shop\ShopGetListController;
@@ -57,5 +58,8 @@ Route::get('flavours',FlavourGetListController::class)->name('flavour.list');
 //INVENTORY
 Route::post('/inventory/refill',RefillHistoryStoreController::class)->name('inventory.refill.store');
 Route::post('/inventory/stocking',StockingHistoryStoreController::class)->name('inventory.stocking.store');
+
+//Manual
+Route::get('/manuals',ManualGetListController::class)->name('manual.list');
 
 require __DIR__ . '/auth.php';

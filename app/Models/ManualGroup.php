@@ -3,10 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Category extends Model
+class ManualGroup extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -18,8 +17,8 @@ class Category extends Model
     ];
 
     // リレーション設定
-    public function flavours(): HasMany
+    public function manuals(): HasMany
     {
-        return $this->hasMany(Flavour::class);
+        return $this->hasMany(Manual::class);
     }
 }

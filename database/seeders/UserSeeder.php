@@ -57,9 +57,9 @@ class UserSeeder extends Seeder
                 "nickname"      => $user['nickname'],
                 "gender"        => $user['gender'],
                 "birthday"      => $user['birthday'],
-                "email"         => $i."_example.mosh.com",
+                "email"         => $i."_example@mosh.com",
                 "staff_code"    => "000".$i,
-                "password"      => "password",
+                "password"      => bcrypt("password"),
                 "profile_image_url" => null,
                 "is_active"     => 1
             ]);
