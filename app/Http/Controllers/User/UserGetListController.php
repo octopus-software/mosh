@@ -24,7 +24,7 @@ class UserGetListController extends Controller
                 'staffs'  => $shop->users->map( function ($staff){
                     return [
                         'id'                => $staff->id,
-                        'position_name'     => $staff->name,
+                        'position_name'     => $staff->positions->name,
                         'nickname'          => $staff->nickname,
                         'profile_image_url' => $staff->profile_image_url,
                         'is_active'         => $staff->is_active

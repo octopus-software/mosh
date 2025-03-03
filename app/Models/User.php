@@ -68,7 +68,7 @@ class User extends Model
     // リレーション設定
     public function positions(): BelongsTo
     {
-        return $this->belongsTo(Position::class);
+        return $this->belongsTo(Position::class,'position_id');
     }
 
     // リレーション設定
